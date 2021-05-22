@@ -11,9 +11,11 @@
 
 .calc {
   max-width: 540px;
+
   margin: 0 auto;
   padding: 0 10px;
   margin: auto;
+  padding-top: 85px;
 }
 
 /* --------  HEADER ----------- */
@@ -21,11 +23,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 85px;
 }
 
 .calc__header-title {
   color: var(--screen-font-color);
   font-weight: bold;
+  margin: 0;
 }
 
 .calc__header-toggle {
