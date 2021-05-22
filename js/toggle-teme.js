@@ -19,16 +19,7 @@ class Toggle {
 
   init = (toggleElementId = DEFAULT_ELEMENT_ID) => {
     // HTML Elements
-    this.$toggleThemeButton = document.getElementById(toggleElementId);
-
-    // ADD LISTENER IN TOGGLE THEME BUTTON
-    if (!this.$toggleThemeButton) {
-      console.warn(
-        `You must create an element with the if ${toggleElementId} to change the theme`
-      );
-    } else {
-      this.$toggleThemeButton.addEventListener("click", this.toggleTheme);
-    }
+    this.setListeners();
 
     // SET INITIAL THEME
     this.setTheme();
@@ -49,20 +40,21 @@ class Toggle {
   };
 
   /**
-   * Toggle theme circular change (1, 2, 3, 1, 2, 3...)
+   * Set listener to inputs
    */
-  toggleTheme = () => {
-    switch (this.currentTheme) {
-      case THEME_TYPES.default:
-        this.setTheme(THEME_TYPES.light);
-        break;
-      case THEME_TYPES.light:
-        this.setTheme(THEME_TYPES.dark);
-        break;
-      default:
-        this.setTheme(THEME_TYPES.default);
-        break;
-    }
+  setListeners = () => {
+    const $inputs = document.querySelectorAll('input[name="toggle-theme"]');
+
+    $inputs.forEach(($input) => {
+      $input.addEventListener("change", this.handleSetCurrentTheme);
+    });
+  };
+
+  /**
+   * Set current theme base on value of input
+   */
+  handleSetCurrentTheme = ({ target }) => {
+    this.setTheme(target.value);
   };
 }
 

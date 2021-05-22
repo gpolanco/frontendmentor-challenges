@@ -18,16 +18,29 @@
     <div id="calcApp" class="calc">
       <div class="calc__header">
         <p class="calc__header-title">calc</p>
-        <div class="calc__header-toggle">
-          <div class="calc__toggle-title">Theme</div>
-          <button id="toggle-theme" class="calc__toggle-control">
-            <span class="calc__toggle-control-label">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
-            </span>
-            <span class="calc__toggle-control-idicator"></span>
-          </button>
+        <div class="toggle-theme">
+          <div class="toggle-theme__title">Theme</div>
+          <div class="toggle-theme__control">
+            <div class="toggle-theme__label">
+              <label for="default-theme">1</label>
+              <label for="light-theme">2</label>
+              <label for="dark-theme">3</label>
+            </div>
+            <div class="toggle-theme__inputs">
+              <div class="toggle-theme__input">
+                <input id="default-theme" checked name="toggle-theme" value="default" type="radio" />
+                <div class="toggle-theme__input-control"></div>
+              </div>
+              <div class="toggle-theme__input">
+                <input id="light-theme" name="toggle-theme" value="light" type="radio" />
+                <div class="toggle-theme__input-control"></div>
+              </div>
+              <div class="toggle-theme__input">
+                <input id="dark-theme" name="toggle-theme" value="dark" type="radio" />
+                <div class="toggle-theme__input-control"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="calc__screen">
