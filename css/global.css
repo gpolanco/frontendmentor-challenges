@@ -1,0 +1,171 @@
+:root {
+  /* GLOBAL */
+  --app-bg: hsl(222, 26%, 31%);
+  --font-family: "Spartan", sans-serif;
+  --font-size-base: 32px;
+  --border-radius: 10px;
+
+  /* TEXTS */
+  --text-color: hsl(224, 36%, 15%);
+  --text-white: hsl(0, 0, 100%);
+  --text-color-highlight-bg: var(--text-white);
+
+  /* KEYPAD */
+  --keypad-bg: hsl(223, 31%, 20%);
+  --key-bg: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+  --key-primary-bg: hsl(225, 21%, 49%);
+  --key-primary-shadow: hsl(224, 28%, 35%);
+  --key-highlight-bg: hsl(6, 63%, 50%);
+  --key-highlight-shadow: hsl(6, 70%, 34%);
+
+  --keypd-margin-y: 24px;
+  --keypad-padding: 18px;
+  --keypad-row-margin: 18px;
+
+  /* BUTTONS */
+  --button-height: 55px;
+  --button-width: 25%;
+  --button-font-size: 0.5rem;
+  --button-number-font-size: 0.7rem;
+  --bitton-margin: 13px;
+  --button-shadow: 0 4px 0 0 var(--key-shadow);
+  --button-shadow-active: 0 2px 0 0 var(--key-shadow);
+  --button-primary-shadow-active: 0 2px 0 0 var(--key-primary-shadow);
+  --button-highlight-shadow-active: 0 2px 0 0 var(--key-highlight-shadow);
+
+  /* SCREEN */
+  --screen-font-color: hsl(30, 25%, 89%);
+  --screen-font-size: 1rem;
+  --screen-bg: hsl(224, 36%, 15%);
+
+  --screen-height: 85px;
+  --screen-font-size: 0.9rem;
+
+  /* TOGGLE THEME */
+  --toggle-bg: hsl(223, 31%, 20%);
+  --toggle-theme-indicator-position: 2px;
+}
+
+/* THEME VARIANT */
+:root body[data-scheme="light"] {
+  /* GLOBAL */
+  --app-bg: hsl(0, 0%, 90%);
+
+  /* TEXTS */
+  --text-color: hsl(60, 10%, 19%);
+  --text-white: hsl(0, 0, 100%);
+  --text-color-highlight-bg: var(--text-white);
+
+  /* KEYPAD */
+  --keypad-bg: hsl(0, 5%, 81%);
+  --key-bg: hsl(45, 7%, 89%);
+  --key-shadow: hsl(35, 11%, 61%);
+  --key-primary-bg: hsl(185, 42%, 37%);
+  --key-primary-shadow: hsl(185, 58%, 25%);
+  --key-highlight-bg: hsl(25, 98%, 40%);
+  --key-highlight-shadow: hsl(25, 99%, 27%);
+
+  /* BUTTONS */
+  --toggle-theme-indicator-position: 23px;
+  --button-shadow: 0 4px 0 0 var(--key-shadow);
+  --button-shadow-active: 0 2px 0 0 var(--key-shadow);
+  --button-primary-shadow-active: 0 2px 0 0 var(--key-primary-shadow);
+  --button-highlight-shadow-active: 0 2px 0 0 var(--key-highlight-shadow);
+
+  /* SCREEN */
+  --screen-bg: hsl(0, 0%, 93%);
+  --screen-font-color: hsl(60, 10%, 19%);
+  --screen-font-size: 1rem;
+
+  /* TOGGLE THEME */
+  --toggle-bg: hsl(25, 98%, 40%);
+}
+
+:root body[data-scheme="dark"] {
+  /* GLOBAL */
+  --app-bg: hsl(268, 75%, 9%);
+
+  /* TEXTS */
+  --text-color: hsl(52, 100%, 62%);
+  --text-color-highlight-bg: hsl(60, 10%, 19%);
+  --text-white: hsl(0, 0, 100%);
+
+  /* KEYPAD */
+  --keypad-bg: hsl(268, 71%, 12%);
+  --key-bg: hsl(268, 47%, 21%);
+  --key-shadow: hsl(290, 70%, 36%);
+  --key-primary-bg: hsl(281, 89%, 26%);
+  --key-primary-shadow: hsl(285, 91%, 52%);
+  --key-highlight-bg: hsl(176, 100%, 44%);
+  --key-highlight-shadow: hsl(177, 92%, 70%);
+
+  /* BUTTONS */
+  --toggle-theme-indicator-position: 46px;
+  --button-shadow: 0 4px 0 0 var(--key-shadow);
+  --button-shadow-active: 0 2px 0 0 var(--key-shadow);
+  --button-primary-shadow-active: 0 2px 0 0 var(--key-primary-shadow);
+  --button-highlight-shadow-active: 0 2px 0 0 var(--key-highlight-shadow);
+
+  /* SCREEN */
+  --screen-bg: hsl(268, 71%, 12%);
+  --screen-font-color: hsl(52, 100%, 62%);
+  --screen-font-size: 1rem;
+
+  /* TOGGLE THEME */
+  --toggle-bg: hsl(268, 71%, 12%);
+}
+
+/* LARGE SCREEN VARIATION */
+@media (min-width: 767px) {
+  :root,
+  :root body[data-scheme="light"],
+  :root body[data-scheme="dark"] {
+    /* KEYPAD */
+    --keypad-padding: 30px;
+    --keypad-row-margin: 24px;
+
+    /* SCREEN */
+    --screen-height: 125px;
+    --screen-font-size: 1.3rem;
+
+    /* BUTTONS */
+    --button-number-font-size: 1rem;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--text-white);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 32px;
+  line-height: 1.4;
+}
+
+* {
+  box-sizing: border-box;
+  transition: all 0.1s ease-in-out;
+}
+
+section,
+header,
+main {
+  display: block;
+}
+
+a {
+  color: var(--key-highlight-bg);
+  font-family: var(--font-family);
+}
+
+button {
+  font-family: var(--font-family);
+}

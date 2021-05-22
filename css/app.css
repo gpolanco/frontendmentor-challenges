@@ -1,0 +1,190 @@
+.app {
+  background-color: var(--app-bg);
+  height: 100vh;
+  width: 100%;
+  color: var(--text-color);
+}
+
+.attribution {
+  font-size: 0.4rem;
+}
+
+.calc {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 0 10px;
+  margin: auto;
+}
+
+/* --------  HEADER ----------- */
+.calc__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calc__header-title {
+  color: var(--screen-font-color);
+  font-weight: bold;
+}
+
+.calc__header-toggle {
+  align-items: center;
+  color: var(--screen-font-color);
+  display: flex;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.calc__toggle-title {
+  font-size: 10px;
+  margin-right: 0.5rem;
+}
+
+.calc__toggle-control {
+  background-color: var(--keypad-bg);
+  border-radius: 30px;
+  border: solid 1px transparent;
+  color: var(--screen-font-color);
+  cursor: pointer;
+  font-size: 0.4rem;
+  height: 24px;
+  position: relative;
+  width: 70px;
+  transition: all 0.2s ease-in-out;
+}
+.calc__toggle-control-label {
+  display: flex;
+  font-size: 10px;
+  font-weight: bold;
+  justify-content: space-between;
+  left: 10px;
+  position: absolute;
+  right: 10px;
+  top: -15px;
+}
+
+.calc__toggle-control-idicator {
+  background-color: var(--key-highlight-bg);
+  border-radius: 50%;
+  height: 18px;
+  left: var(--toggle-theme-indicator-position);
+  position: absolute;
+  top: 2px;
+  width: 18px;
+}
+
+.calc__toggle-control:hover {
+  opacity: 0.8;
+}
+
+/* --------  SCREEN ----------- */
+.calc__screen {
+  align-items: center;
+  background-color: var(--screen-bg);
+  border-radius: var(--border-radius);
+  color: var(--screen-font-color);
+  display: flex;
+  align-items: center;
+  font-size: var(--screen-font-size);
+  font-weight: bold;
+  height: var(--screen-height);
+  justify-content: flex-end;
+  padding: 0 0.5rem;
+  position: relative;
+}
+
+.calc__screen-operation {
+  font-size: 0.5rem;
+  position: absolute;
+  bottom: 10px;
+  color: var(--key-primary-shadow);
+}
+
+.calc__screen-result {
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* --------  KEYPAD ----------- */
+.calc__keypad {
+  background-color: var(--keypad-bg);
+  border-radius: var(--border-radius);
+  margin: var(--keypd-margin-y) 0;
+  padding: var(--keypad-padding);
+}
+
+.calc__keypad-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calc__keypad-row + .calc__keypad-row {
+  margin-top: var(--keypad-row-margin);
+}
+
+/* --------  BUTTONS ----------- */
+.cacl__button {
+  background-color: var(--key-bg);
+  border-radius: var(--border-radius);
+  border: none;
+  box-shadow: var(--button-shadow);
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: var(--button-font-size);
+  font-weight: 700;
+  height: var(--button-height);
+  text-transform: uppercase;
+  user-select: none;
+  width: var(--button-width);
+  padding: 0;
+}
+
+.cacl__button:active,
+.cacl__button.active {
+  box-shadow: var(--button-shadow-active);
+  transform: translateY(2px);
+  opacity: 0.8;
+}
+.cacl__button:hover {
+  opacity: 0.8;
+}
+
+.cacl__button-number {
+  font-size: var(--button-number-font-size);
+}
+
+.cacl__button + .cacl__button {
+  margin-left: var(--bitton-margin);
+}
+
+/* Primary button (Reset - Del) */
+.cacl__button--primary {
+  background-color: var(--key-primary-bg);
+  box-shadow: 0 5px 0 0 var(--key-primary-shadow);
+  color: white;
+}
+
+.cacl__button--primary:active,
+.cacl__button--primary.active {
+  box-shadow: var(--button-primary-shadow-active);
+}
+
+/* Highlight button ( = ) */
+.cacl__button--highlight {
+  background-color: var(--key-highlight-bg);
+  box-shadow: 0 5px 0 0 var(--key-highlight-shadow);
+  color: white;
+}
+
+.cacl__button--highlight:active,
+.cacl__button--highlight.active {
+  box-shadow: var(--button-highlight-shadow-active);
+}
+
+.cacl__button-half {
+  width: 50%;
+}
