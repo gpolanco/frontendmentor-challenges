@@ -38,9 +38,7 @@
   --screen-font-color: hsl(30, 25%, 89%);
   --screen-font-size: 1rem;
   --screen-bg: hsl(224, 36%, 15%);
-
   --screen-height: 85px;
-  --screen-font-size: 0.9rem;
 
   /* TOGGLE THEME */
   --toggle-bg: hsl(223, 31%, 20%);
@@ -76,7 +74,6 @@
   /* SCREEN */
   --screen-bg: hsl(0, 0%, 93%);
   --screen-font-color: hsl(60, 10%, 19%);
-  --screen-font-size: 1rem;
 
   /* TOGGLE THEME */
   --toggle-bg: hsl(25, 98%, 40%);
@@ -110,7 +107,6 @@
   /* SCREEN */
   --screen-bg: hsl(268, 71%, 12%);
   --screen-font-color: hsl(52, 100%, 62%);
-  --screen-font-size: 1rem;
 
   /* TOGGLE THEME */
   --toggle-bg: hsl(268, 71%, 12%);
@@ -127,7 +123,7 @@
 
     /* SCREEN */
     --screen-height: 125px;
-    --screen-font-size: 1.3rem;
+    --screen-font-size: 1.5rem;
 
     /* BUTTONS */
     --button-number-font-size: 1rem;
