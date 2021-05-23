@@ -37,6 +37,7 @@ class Toggle {
     this.currentTheme = theme;
     this.$body.dataset["scheme"] = theme;
     localStorage.setItem("theme", theme);
+    this.setCurrentInputChecked();
   };
 
   /**
@@ -48,6 +49,18 @@ class Toggle {
     $inputs.forEach(($input) => {
       $input.addEventListener("change", this.handleSetCurrentTheme);
     });
+  };
+
+  /**
+   * Checked current theme input
+   */
+  setCurrentInputChecked = () => {
+    if (this.currentTheme) {
+      const $input = document.querySelector(
+        `input[value=${this.currentTheme}]`
+      );
+      $input.setAttribute("checked", true);
+    }
   };
 
   /**
