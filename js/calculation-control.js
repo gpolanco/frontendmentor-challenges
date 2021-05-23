@@ -19,32 +19,8 @@ class Calculation {
   leftNumber = "0";
   rightNumber = null;
   operator = null;
+  result = null;
   currentNumber = CURRENT_NUMBER.left;
-
-  // TODO: Implement common function to run operation.
-  Sum = () => {
-    const result = Number(this.leftNumber) + Number(this.rightNumber);
-    ScreenControl.setResult(result);
-    this.resetAll(false);
-  };
-
-  Subtract = () => {
-    const result = Number(this.leftNumber) - Number(this.rightNumber);
-    ScreenControl.setResult(result);
-    this.resetAll(false);
-  };
-
-  Division = () => {
-    const result = Number(this.leftNumber) / Number(this.rightNumber);
-    ScreenControl.setResult(result);
-    this.resetAll(false);
-  };
-
-  Multiplication = () => {
-    const result = Number(this.leftNumber) * Number(this.rightNumber);
-    ScreenControl.setResult(result);
-    this.resetAll(false);
-  };
 
   /**
    * Handle action based on value
@@ -111,16 +87,16 @@ class Calculation {
       switch (this.operator) {
         case CALC_OPERATIONS["*"]:
         case CALC_OPERATIONS["x"]:
-          this.Multiplication();
+          this.setResult(Number(this.leftNumber) * Number(this.rightNumber));
           break;
         case CALC_OPERATIONS["+"]:
-          this.Sum();
+          this.setResult(Number(this.leftNumber) + Number(this.rightNumber));
           break;
         case CALC_OPERATIONS["/"]:
-          this.Division();
+          this.setResult(Number(this.leftNumber) / Number(this.rightNumber));
           break;
         case CALC_OPERATIONS["-"]:
-          this.Subtract();
+          this.setResult(Number(this.leftNumber) - Number(this.rightNumber));
           break;
         default:
           break;
@@ -137,19 +113,36 @@ class Calculation {
       ScreenControl.setOperation(
         `${this.leftNumber} ${this.operator} ${this.rightNumber || ""}`
       );
+    } else if (this.result) {
+      this.operator = operator;
+      this.leftNumber = this.result;
+      this.currentNumber = CURRENT_NUMBER.right;
+
+      ScreenControl.setOperation(
+        `${this.result} ${this.operator} ${this.rightNumber || ""}`
+      );
     }
+  };
+
+  setResult = (result) => {
+    this.result = result;
+    ScreenControl.setResult(this.result);
+    ScreenControl.setOperation("");
+
+    this.leftNumber = null;
+    this.rightNumber = null;
+    this.operator = null;
   };
 
   /**
    * Initialize all values
    */
   resetAll = (cleanScreen = true) => {
-    if (cleanScreen) {
-      ScreenControl.resetScreen();
-    }
+    ScreenControl.resetScreen();
     this.leftNumber = null;
     this.rightNumber = null;
     this.operator = null;
+    this.result = null;
     this.currentNumber = CURRENT_NUMBER.left;
   };
 
@@ -174,6 +167,7 @@ class Calculation {
    * Add point to decimal operator
    */
   addPeriod = () => {
+    // Add to left number
     if (
       this.currentNumber === CURRENT_NUMBER.left &&
       this.leftNumber &&
@@ -182,12 +176,19 @@ class Calculation {
       this.setNumber(".");
     }
 
+    // Add to right number
     if (
       this.currentNumber === CURRENT_NUMBER.right &&
       this.rightNumber &&
       !this.rightNumber.includes(".")
     ) {
       this.setNumber(".");
+    }
+    if (
+      (this.leftNumber && this.operator && !this.rightNumber) ||
+      !this.leftNumber
+    ) {
+      this.setNumber("0.");
     }
   };
 }
