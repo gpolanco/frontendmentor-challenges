@@ -14,74 +14,62 @@
   <link href="css/app.css" rel="stylesheet">
 </head>
 <body>
-  <main class="app">
-    <div id="calcApp" class="calc">
-      <div class="calc__header">
-        <p class="calc__header-title">calc</p>
-        <div class="toggle-theme">
-          <div class="toggle-theme__title">Theme</div>
-          <div class="toggle-theme__control">
-            <div class="toggle-theme__label">
-              <label for="default-theme">1</label>
-              <label for="light-theme">2</label>
-              <label for="dark-theme">3</label>
+  <div id="calcApp" class="calc">
+    <div class="calc__header">
+      <p class="calc__header-title">calc</p>
+      <div class="toggle-theme">
+        <div class="toggle-theme__title">Theme</div>
+        <div class="toggle-theme__control">
+          <div class="toggle-theme__label">
+            <label for="default-theme">1</label>
+            <label for="light-theme">2</label>
+            <label for="dark-theme">3</label>
+          </div>
+          <div class="toggle-theme__inputs">
+            <div class="toggle-theme__input">
+              <input id="default-theme" name="toggle-theme" value="default" type="radio" />
+              <div class="toggle-theme__input-control"></div>
             </div>
-            <div class="toggle-theme__inputs">
-              <div class="toggle-theme__input">
-                <input id="default-theme" name="toggle-theme" value="default" type="radio" />
-                <div class="toggle-theme__input-control"></div>
-              </div>
-              <div class="toggle-theme__input">
-                <input id="light-theme" name="toggle-theme" value="light" type="radio" />
-                <div class="toggle-theme__input-control"></div>
-              </div>
-              <div class="toggle-theme__input">
-                <input id="dark-theme" name="toggle-theme" value="dark" type="radio" />
-                <div class="toggle-theme__input-control"></div>
-              </div>
+            <div class="toggle-theme__input">
+              <input id="light-theme" name="toggle-theme" value="light" type="radio" />
+              <div class="toggle-theme__input-control"></div>
+            </div>
+            <div class="toggle-theme__input">
+              <input id="dark-theme" name="toggle-theme" value="dark" type="radio" />
+              <div class="toggle-theme__input-control"></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="calc__screen">
-        <div id="calc-result" class="calc__screen-result">0</div>
-        <div id="calc-operation" class="calc__screen-operation"></div>
-      </div>
-      <div class="calc__keypad">
-        <div class="calc__keypad-row">
-          <button data-type="number" value="7" class="cacl__button cacl__button-number">7</button>
-          <button data-type="number" value="8" class="cacl__button cacl__button-number">8</button>
-          <button data-type="number" value="9" class="cacl__button cacl__button-number">9</button>
-          <button data-type="action" value="del" class="cacl__button cacl__button--primary">del</button>
-        </div>
-        <div class="calc__keypad-row">
-          <button data-type="number" value="4" class="cacl__button cacl__button-number">4</button>
-          <button data-type="number" value="5" class="cacl__button cacl__button-number">5</button>
-          <button data-type="number" value="6" class="cacl__button cacl__button-number">6</button>
-          <button data-type="operation" id="plus" value="+"  class="cacl__button">+</button>
-        </div>
-        <div class="calc__keypad-row">
-          <button data-type="number" value="1" class="cacl__button cacl__button-number">1</button>
-          <button data-type="number" value="2" class="cacl__button cacl__button-number">2</button>
-          <button data-type="number" value="3" class="cacl__button cacl__button-number">3</button>
-          <button data-type="operation" id="substract" value="-"  class="cacl__button">-</button>
-        </div>
-        <div class="calc__keypad-row">
-          <button data-type="action" value="." class="cacl__button">.</button>
-          <button data-type="number" value="0" class="cacl__button cacl__button-number">0</button>
-          <button data-type="operation" value="/"  class="cacl__button">/</button>
-          <button data-type="operation" value="x"  class="cacl__button">x</button>
-        </div>
-        <div class="calc__keypad-row">
-          <button data-type="action" value="reset"  class="cacl__button cacl__button--primary cacl__button-half">reset</button>
-          <button data-type="action" value="="  class="cacl__button cacl__button--highlight cacl__button-half">=</button>
-        </div>
-      </div>
+    </div>
+    <div class="calc__screen">
+      <div id="calc-result" class="calc__screen-result">0</div>
+      <div id="calc-operation" class="calc__screen-operation"></div>
+    </div>
+    <div class="calc__keypad">
+        <button data-type="number" value="7" class="cacl__button cacl__button-number">7</button>
+        <button data-type="number" value="8" class="cacl__button cacl__button-number">8</button>
+        <button data-type="number" value="9" class="cacl__button cacl__button-number">9</button>
+        <button data-type="action" value="del" class="cacl__button cacl__button--primary">del</button>
+        <button data-type="number" value="4" class="cacl__button cacl__button-number">4</button>
+        <button data-type="number" value="5" class="cacl__button cacl__button-number">5</button>
+        <button data-type="number" value="6" class="cacl__button cacl__button-number">6</button>
+        <button data-type="operation" id="plus" value="+"  class="cacl__button">+</button>
+        <button data-type="number" value="1" class="cacl__button cacl__button-number">1</button>
+        <button data-type="number" value="2" class="cacl__button cacl__button-number">2</button>
+        <button data-type="number" value="3" class="cacl__button cacl__button-number">3</button>
+        <button data-type="operation" id="substract" value="-"  class="cacl__button">-</button>
+        <button data-type="action" value="." class="cacl__button">.</button>
+        <button data-type="number" value="0" class="cacl__button cacl__button-number">0</button>
+        <button data-type="operation" value="/"  class="cacl__button">/</button>
+        <button data-type="operation" value="x"  class="cacl__button">x</button>
+        <button data-type="action" value="reset"  class="cacl__button cacl__button-reset cacl__button--primary">reset</button>
+        <button data-type="action" value="="  class="cacl__button cacl__button-equal cacl__button--highlight">=</button>
     </div>
     
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a target="_blank" href="https://www.gpolanco.com">Geordano Polanco</a>.
+      Coded  🙌🏼  <a target="_blank" href="https://www.gpolanco.com">Geordano Polanco</a>.
     </div>
   </main>
   <script src="js/main.js" type="module"></script>

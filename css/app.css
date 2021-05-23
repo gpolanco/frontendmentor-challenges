@@ -1,8 +1,4 @@
 .app {
-  background-color: var(--app-bg);
-  height: 100vh;
-  width: 100%;
-  color: var(--text-color);
 }
 
 .attribution {
@@ -138,17 +134,13 @@
 .calc__keypad {
   background-color: var(--keypad-bg);
   border-radius: var(--border-radius);
+  display: grid;
   margin: var(--keypd-margin-y) 0;
   padding: var(--keypad-padding);
-}
 
-.calc__keypad-row {
-  display: flex;
-  justify-content: space-between;
-}
-
-.calc__keypad-row + .calc__keypad-row {
-  margin-top: var(--keypad-row-margin);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, var(--button-height));
+  gap: var(--keypad-gap-x) var(--keypad-gap-y);
 }
 
 /* --------  BUTTONS ----------- */
@@ -168,6 +160,14 @@
   padding: 0;
 }
 
+.cacl__button-reset {
+  grid-column: 1/3;
+}
+
+.cacl__button-equal {
+  grid-column: 3/5;
+}
+
 .cacl__button:active,
 .cacl__button.active {
   box-shadow: var(--button-shadow-active);
@@ -180,10 +180,6 @@
 
 .cacl__button-number {
   font-size: var(--button-number-font-size);
-}
-
-.cacl__button + .cacl__button {
-  margin-left: var(--bitton-margin);
 }
 
 /* Primary button (Reset - Del) */
@@ -208,8 +204,4 @@
 .cacl__button--highlight:active,
 .cacl__button--highlight.active {
   box-shadow: var(--button-highlight-shadow-active);
-}
-
-.cacl__button-half {
-  width: 50%;
 }
