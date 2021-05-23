@@ -13,6 +13,7 @@ export const CALC_ACTIONS = {
   reset: "reset",
   Escape: "Escape",
   "=": "=",
+  Enter: "Enter",
 };
 
 export const CALC_NUMBERS = {

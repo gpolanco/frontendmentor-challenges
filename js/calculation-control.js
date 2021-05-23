@@ -72,6 +72,7 @@ class Calculation {
         this.addPeriod();
         break;
       case CALC_ACTIONS["="]:
+      case CALC_ACTIONS.Enter:
         this.resolveOperation();
         break;
       default:

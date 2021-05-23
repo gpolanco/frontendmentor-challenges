@@ -30,6 +30,8 @@ class KeyPad {
    * handle key up
    */
   handleKeyUp = ({ key }) => {
+    console.log(key);
+
     CalculationControl.handleActionType(key);
     this.handleRemoveActivebuttonClass(key);
   };
